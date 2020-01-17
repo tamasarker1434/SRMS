@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="SRMSEntities">
+    <EntitySetMapping Name="CLASS_INFO">
+      <EntityTypeMapping TypeName="Model.CLASS_INFO">
+        <MappingFragment StoreEntitySet="CLASS_INFO">
+          <ScalarProperty Name="CLASS_ID" ColumnName="CLASS_ID" />
+          <ScalarProperty Name="CLASS_LEVEL" ColumnName="CLASS_LEVEL" />
+          <ScalarProperty Name="ACTION_BY" ColumnName="ACTION_BY" />
+          <ScalarProperty Name="ACTION_DATE" ColumnName="ACTION_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="course_details">
+      <EntityTypeMapping TypeName="Model.course_details">
+        <MappingFragment StoreEntitySet="course_details">
+          <ScalarProperty Name="course_id" ColumnName="course_id" />
+          <ScalarProperty Name="class_id" ColumnName="class_id" />
+          <ScalarProperty Name="subject_id" ColumnName="subject_id" />
+          <ScalarProperty Name="teacher_id" ColumnName="teacher_id" />
+          <ScalarProperty Name="action_by" ColumnName="action_by" />
+          <ScalarProperty Name="action_date" ColumnName="action_date" />
+          <ScalarProperty Name="update_by" ColumnName="update_by" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="is_combine" ColumnName="is_combine" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COURSE_TAKEN">
+      <EntityTypeMapping TypeName="Model.COURSE_TAKEN">
+        <MappingFragment StoreEntitySet="COURSE_TAKEN">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="STD_ID" ColumnName="STD_ID" />
+          <ScalarProperty Name="SUB_ID" ColumnName="SUB_ID" />
+          <ScalarProperty Name="COURSE_TYPE" ColumnName="COURSE_TYPE" />
+          <ScalarProperty Name="ACTION_BY" ColumnName="ACTION_BY" />
+          <ScalarProperty Name="ACTION_DATE" ColumnName="ACTION_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RESULT_TABLE_MST">
+      <EntityTypeMapping TypeName="Model.RESULT_TABLE_MST">
+        <MappingFragment StoreEntitySet="RESULT_TABLE_MST">
+          <ScalarProperty Name="RESULT_ID" ColumnName="RESULT_ID" />
+          <ScalarProperty Name="TEACHER_ID" ColumnName="TEACHER_ID" />
+          <ScalarProperty Name="SUB_ID" ColumnName="SUB_ID" />
+          <ScalarProperty Name="EXAM_TYPE" ColumnName="EXAM_TYPE" />
+          <ScalarProperty Name="ACTION_BY" ColumnName="ACTION_BY" />
+          <ScalarProperty Name="ACTION_DATE" ColumnName="ACTION_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RESULT_TBL">
+      <EntityTypeMapping TypeName="Model.RESULT_TBL">
+        <MappingFragment StoreEntitySet="RESULT-TBL">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CLASS_ID" ColumnName="CLASS_ID" />
+          <ScalarProperty Name="SUB_ID" ColumnName="SUB_ID" />
+          <ScalarProperty Name="STD_ID" ColumnName="STD_ID" />
+          <ScalarProperty Name="CREATIVE" ColumnName="CREATIVE" />
+          <ScalarProperty Name="MCQ" ColumnName="MCQ" />
+          <ScalarProperty Name="PRACTICAL" ColumnName="PRACTICAL" />
+          <ScalarProperty Name="EXAM_TRIMESTR" ColumnName="EXAM_TRIMESTR" />
+          <ScalarProperty Name="ACTION_BY" ColumnName="ACTION_BY" />
+          <ScalarProperty Name="ACTION_DATE" ColumnName="ACTION_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="RESULT_TABLE_MST_ID" ColumnName="RESULT_TABLE_MST_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STUDENT_INFO">
+      <EntityTypeMapping TypeName="Model.STUDENT_INFO">
+        <MappingFragment StoreEntitySet="STUDENT_INFO">
+          <ScalarProperty Name="STD_ID" ColumnName="STD_ID" />
+          <ScalarProperty Name="STD_ROLL" ColumnName="STD_ROLL" />
+          <ScalarProperty Name="STD_NAME" ColumnName="STD_NAME" />
+          <ScalarProperty Name="STD_ADDRESS" ColumnName="STD_ADDRESS" />
+          <ScalarProperty Name="STD_FATHER_NAME" ColumnName="STD_FATHER_NAME" />
+          <ScalarProperty Name="STD_MOTHER_NAME" ColumnName="STD_MOTHER_NAME" />
+          <ScalarProperty Name="STD_FATHER_CONTACT" ColumnName="STD_FATHER_CONTACT" />
+          <ScalarProperty Name="STD_MOTHER_CONTACT" ColumnName="STD_MOTHER_CONTACT" />
+          <ScalarProperty Name="STD_CONTACT" ColumnName="STD_CONTACT" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="ACTION_BY" ColumnName="ACTION_BY" />
+          <ScalarProperty Name="ACTION_DATE" ColumnName="ACTION_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="CLASS_ID" ColumnName="CLASS_ID" />
+          <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+          <ScalarProperty Name="RELIGION" ColumnName="RELIGION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SUBJECT_INFO">
+      <EntityTypeMapping TypeName="Model.SUBJECT_INFO">
+        <MappingFragment StoreEntitySet="SUBJECT_INFO">
+          <ScalarProperty Name="SUB_ID" ColumnName="SUB_ID" />
+          <ScalarProperty Name="SUB_NAME" ColumnName="SUB_NAME" />
+          <ScalarProperty Name="CLASS_ID" ColumnName="CLASS_ID" />
+          <ScalarProperty Name="TOTAL_MARKS" ColumnName="TOTAL_MARKS" />
+          <ScalarProperty Name="CREATIVE_MARKS" ColumnName="CREATIVE_MARKS" />
+          <ScalarProperty Name="MCQ_MARKS" ColumnName="MCQ_MARKS" />
+          <ScalarProperty Name="PRACTICAL_MARKS" ColumnName="PRACTICAL_MARKS" />
+          <ScalarProperty Name="ACTION_BY" ColumnName="ACTION_BY" />
+          <ScalarProperty Name="ACTION_DATE" ColumnName="ACTION_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="SUB_CODE" ColumnName="SUB_CODE" />
+          <ScalarProperty Name="COMBINE_SUB" ColumnName="COMBINE_SUB" />
+          <ScalarProperty Name="GROUP_CATEGORY" ColumnName="GROUP_CATEGORY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="teachers_info">
+      <EntityTypeMapping TypeName="Model.teachers_info">
+        <MappingFragment StoreEntitySet="teachers_info">
+          <ScalarProperty Name="teacher_id" ColumnName="teacher_id" />
+          <ScalarProperty Name="teacher_name" ColumnName="teacher_name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="contact_no" ColumnName="contact_no" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="religion" ColumnName="religion" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="user_level" ColumnName="user_level" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="action_by" ColumnName="action_by" />
+          <ScalarProperty Name="action_date" ColumnName="action_date" />
+          <ScalarProperty Name="update_by" ColumnName="update_by" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER_INFO">
+      <EntityTypeMapping TypeName="Model.USER_INFO">
+        <MappingFragment StoreEntitySet="USER_INFO">
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="FULL_NAME" ColumnName="FULL_NAME" />
+          <ScalarProperty Name="USER_LEVEL_ID" ColumnName="USER_LEVEL_ID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="USER_PHOTO" ColumnName="USER_PHOTO" />
+          <ScalarProperty Name="LOGIN_ATTEMPT" ColumnName="LOGIN_ATTEMPT" />
+          <ScalarProperty Name="DATE_PASSWORD_CHANGE" ColumnName="DATE_PASSWORD_CHANGE" />
+          <ScalarProperty Name="ACTION_DT" ColumnName="ACTION_DT" />
+          <ScalarProperty Name="ACTION_BY" ColumnName="ACTION_BY" />
+          <ScalarProperty Name="UPDATE_DT" ColumnName="UPDATE_DT" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="EMPLOYEE_ID" ColumnName="EMPLOYEE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER_LEVEL_INFO">
+      <EntityTypeMapping TypeName="Model.USER_LEVEL_INFO">
+        <MappingFragment StoreEntitySet="USER_LEVEL_INFO">
+          <ScalarProperty Name="LEVEL_ID" ColumnName="LEVEL_ID" />
+          <ScalarProperty Name="LEVEL_NAME" ColumnName="LEVEL_NAME" />
+          <ScalarProperty Name="ACTION_DT" ColumnName="ACTION_DT" />
+          <ScalarProperty Name="UPDATE_DT" ColumnName="UPDATE_DT" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER_PASS_CHANGE_HST">
+      <EntityTypeMapping TypeName="Model.USER_PASS_CHANGE_HST">
+        <MappingFragment StoreEntitySet="USER_PASS_CHANGE_HST">
+          <ScalarProperty Name="CHANGE_ID" ColumnName="CHANGE_ID" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="NEW_PASSWORD" ColumnName="NEW_PASSWORD" />
+          <ScalarProperty Name="OLD_PASSWORD" ColumnName="OLD_PASSWORD" />
+          <ScalarProperty Name="CHANGE_DATE" ColumnName="CHANGE_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

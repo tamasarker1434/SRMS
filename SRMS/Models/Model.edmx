@@ -1,0 +1,1051 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CLASS_INFO">
+          <Key>
+            <PropertyRef Name="CLASS_ID" />
+          </Key>
+          <Property Name="CLASS_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CLASS_LEVEL" Type="int" Nullable="false" />
+          <Property Name="ACTION_BY" Type="bigint" Nullable="false" />
+          <Property Name="ACTION_DATE" Type="datetime" Nullable="false" />
+          <Property Name="UPDATE_BY" Type="bigint" />
+          <Property Name="UPDATE_DATE" Type="datetime" />
+          <Property Name="REMARKS" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="course_details">
+          <Key>
+            <PropertyRef Name="course_id" />
+          </Key>
+          <Property Name="course_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="class_id" Type="bigint" Nullable="false" />
+          <Property Name="subject_id" Type="bigint" Nullable="false" />
+          <Property Name="teacher_id" Type="bigint" Nullable="false" />
+          <Property Name="action_by" Type="bigint" Nullable="false" />
+          <Property Name="action_date" Type="datetime" Nullable="false" />
+          <Property Name="update_by" Type="bigint" />
+          <Property Name="update_date" Type="datetime" />
+          <Property Name="is_combine" Type="int" />
+        </EntityType>
+        <EntityType Name="COURSE_TAKEN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="STD_ID" Type="bigint" Nullable="false" />
+          <Property Name="SUB_ID" Type="bigint" Nullable="false" />
+          <Property Name="COURSE_TYPE" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ACTION_BY" Type="bigint" Nullable="false" />
+          <Property Name="ACTION_DATE" Type="datetime" Nullable="false" />
+          <Property Name="UPDATE_BY" Type="bigint" />
+          <Property Name="UPDATE_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="RESULT_TABLE_MST">
+          <Key>
+            <PropertyRef Name="RESULT_ID" />
+          </Key>
+          <Property Name="RESULT_ID" Type="bigint" Nullable="false" />
+          <Property Name="TEACHER_ID" Type="bigint" />
+          <Property Name="SUB_ID" Type="bigint" />
+          <Property Name="EXAM_TYPE" Type="char" MaxLength="1" />
+          <Property Name="ACTION_BY" Type="bigint" Nullable="false" />
+          <Property Name="ACTION_DATE" Type="datetime" Nullable="false" />
+          <Property Name="UPDATE_BY" Type="bigint" />
+          <Property Name="UPDATE_DATE" Type="datetime" />
+          <Property Name="STATUS" Type="char" MaxLength="1" />
+          <Property Name="ACADEMIC_YEAR" Type="date" />
+        </EntityType>
+        <EntityType Name="RESULT-TBL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CLASS_ID" Type="bigint" Nullable="false" />
+          <Property Name="SUB_ID" Type="bigint" Nullable="false" />
+          <Property Name="STD_ID" Type="bigint" Nullable="false" />
+          <Property Name="CREATIVE" Type="int" />
+          <Property Name="MCQ" Type="int" />
+          <Property Name="PRACTICAL" Type="int" />
+          <Property Name="EXAM_TRIMESTR" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ACTION_BY" Type="bigint" Nullable="false" />
+          <Property Name="ACTION_DATE" Type="datetime" Nullable="false" />
+          <Property Name="UPDATE_BY" Type="bigint" />
+          <Property Name="UPDATE_DATE" Type="datetime" />
+          <Property Name="STATUS" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="RESULT_TABLE_MST_ID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="STUDENT_INFO">
+          <Key>
+            <PropertyRef Name="STD_ID" />
+          </Key>
+          <Property Name="STD_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="STD_ROLL" Type="bigint" Nullable="false" />
+          <Property Name="STD_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="STD_ADDRESS" Type="nvarchar" MaxLength="50" />
+          <Property Name="STD_FATHER_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="STD_MOTHER_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="STD_FATHER_CONTACT" Type="int" />
+          <Property Name="STD_MOTHER_CONTACT" Type="int" />
+          <Property Name="STD_CONTACT" Type="int" />
+          <Property Name="REMARKS" Type="nvarchar" MaxLength="500" />
+          <Property Name="ACTION_BY" Type="bigint" Nullable="false" />
+          <Property Name="ACTION_DATE" Type="datetime" Nullable="false" />
+          <Property Name="UPDATE_BY" Type="bigint" />
+          <Property Name="UPDATE_DATE" Type="datetime" />
+          <Property Name="IS_ACTIVE" Type="int" Nullable="false" />
+          <Property Name="CLASS_ID" Type="bigint" Nullable="false" />
+          <Property Name="GENDER" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="RELIGION" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SUBJECT_INFO">
+          <Key>
+            <PropertyRef Name="SUB_ID" />
+          </Key>
+          <Property Name="SUB_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SUB_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CLASS_ID" Type="bigint" Nullable="false" />
+          <Property Name="TOTAL_MARKS" Type="int" Nullable="false" />
+          <Property Name="CREATIVE_MARKS" Type="int" />
+          <Property Name="MCQ_MARKS" Type="int" />
+          <Property Name="PRACTICAL_MARKS" Type="int" />
+          <Property Name="ACTION_BY" Type="bigint" Nullable="false" />
+          <Property Name="ACTION_DATE" Type="datetime" Nullable="false" />
+          <Property Name="UPDATE_BY" Type="bigint" />
+          <Property Name="UPDATE_DATE" Type="datetime" />
+          <Property Name="REMARKS" Type="nvarchar" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="int" Nullable="false" />
+          <Property Name="SUB_CODE" Type="varchar" MaxLength="50" />
+          <Property Name="COMBINE_SUB" Type="bigint" />
+          <Property Name="GROUP_CATEGORY" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="teachers_info">
+          <Key>
+            <PropertyRef Name="teacher_id" />
+          </Key>
+          <Property Name="teacher_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="teacher_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="address" Type="nvarchar" MaxLength="50" />
+          <Property Name="contact_no" Type="int" Nullable="false" />
+          <Property Name="gender" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="religion" Type="char" MaxLength="1" />
+          <Property Name="designation" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="user_level" Type="bigint" Nullable="false" />
+          <Property Name="is_active" Type="int" />
+          <Property Name="action_by" Type="bigint" Nullable="false" />
+          <Property Name="action_date" Type="datetime" Nullable="false" />
+          <Property Name="update_by" Type="bigint" />
+          <Property Name="update_date" Type="datetime" />
+          <Property Name="remarks" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="USER_INFO">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FULL_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="USER_LEVEL_ID" Type="bigint" Nullable="false" />
+          <Property Name="USERNAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MOBILE" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="USER_PHOTO" Type="nvarchar" MaxLength="50" />
+          <Property Name="LOGIN_ATTEMPT" Type="smallint" Nullable="false" />
+          <Property Name="DATE_PASSWORD_CHANGE" Type="datetime" />
+          <Property Name="ACTION_DT" Type="datetime" />
+          <Property Name="ACTION_BY" Type="bigint" />
+          <Property Name="UPDATE_DT" Type="datetime" />
+          <Property Name="UPDATE_BY" Type="bigint" />
+          <Property Name="IS_DELETED" Type="int" Nullable="false" />
+          <Property Name="EMPLOYEE_ID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="USER_LEVEL_INFO">
+          <Key>
+            <PropertyRef Name="LEVEL_ID" />
+          </Key>
+          <Property Name="LEVEL_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LEVEL_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ACTION_DT" Type="datetime" Nullable="false" />
+          <Property Name="UPDATE_DT" Type="datetime" />
+          <Property Name="REMARKS" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="USER_PASS_CHANGE_HST">
+          <Key>
+            <PropertyRef Name="CHANGE_ID" />
+          </Key>
+          <Property Name="CHANGE_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USER_ID" Type="bigint" Nullable="false" />
+          <Property Name="NEW_PASSWORD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OLD_PASSWORD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CHANGE_DATE" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_course_details_CLASS_INFO">
+          <End Role="CLASS_INFO" Type="Self.CLASS_INFO" Multiplicity="1" />
+          <End Role="course_details" Type="Self.course_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASS_INFO">
+              <PropertyRef Name="CLASS_ID" />
+            </Principal>
+            <Dependent Role="course_details">
+              <PropertyRef Name="class_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_course_details_SUBJECT_INFO">
+          <End Role="SUBJECT_INFO" Type="Self.SUBJECT_INFO" Multiplicity="1" />
+          <End Role="course_details" Type="Self.course_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUBJECT_INFO">
+              <PropertyRef Name="SUB_ID" />
+            </Principal>
+            <Dependent Role="course_details">
+              <PropertyRef Name="subject_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_course_details_teachers_info">
+          <End Role="teachers_info" Type="Self.teachers_info" Multiplicity="1" />
+          <End Role="course_details" Type="Self.course_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="teachers_info">
+              <PropertyRef Name="teacher_id" />
+            </Principal>
+            <Dependent Role="course_details">
+              <PropertyRef Name="teacher_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COURSE_TAKEN_STUDENT_INFO">
+          <End Role="STUDENT_INFO" Type="Self.STUDENT_INFO" Multiplicity="1" />
+          <End Role="COURSE_TAKEN" Type="Self.COURSE_TAKEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STUDENT_INFO">
+              <PropertyRef Name="STD_ID" />
+            </Principal>
+            <Dependent Role="COURSE_TAKEN">
+              <PropertyRef Name="STD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COURSE_TAKEN_SUBJECT_INFO">
+          <End Role="SUBJECT_INFO" Type="Self.SUBJECT_INFO" Multiplicity="1" />
+          <End Role="COURSE_TAKEN" Type="Self.COURSE_TAKEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUBJECT_INFO">
+              <PropertyRef Name="SUB_ID" />
+            </Principal>
+            <Dependent Role="COURSE_TAKEN">
+              <PropertyRef Name="SUB_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RESULT-TBL_RESULT-TBL">
+          <End Role="RESULT_TABLE_MST" Type="Self.RESULT_TABLE_MST" Multiplicity="0..1" />
+          <End Role="RESULT-TBL" Type="Self.RESULT-TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RESULT_TABLE_MST">
+              <PropertyRef Name="RESULT_ID" />
+            </Principal>
+            <Dependent Role="RESULT-TBL">
+              <PropertyRef Name="RESULT_TABLE_MST_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RESULT-TBL_STUDENT_INFO">
+          <End Role="STUDENT_INFO" Type="Self.STUDENT_INFO" Multiplicity="1" />
+          <End Role="RESULT-TBL" Type="Self.RESULT-TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STUDENT_INFO">
+              <PropertyRef Name="STD_ID" />
+            </Principal>
+            <Dependent Role="RESULT-TBL">
+              <PropertyRef Name="STD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RESULT-TBL_SUBJECT_INFO">
+          <End Role="SUBJECT_INFO" Type="Self.SUBJECT_INFO" Multiplicity="1" />
+          <End Role="RESULT-TBL" Type="Self.RESULT-TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUBJECT_INFO">
+              <PropertyRef Name="SUB_ID" />
+            </Principal>
+            <Dependent Role="RESULT-TBL">
+              <PropertyRef Name="SUB_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STUDENT_INFO_CLASS_INFO">
+          <End Role="CLASS_INFO" Type="Self.CLASS_INFO" Multiplicity="1" />
+          <End Role="STUDENT_INFO" Type="Self.STUDENT_INFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASS_INFO">
+              <PropertyRef Name="CLASS_ID" />
+            </Principal>
+            <Dependent Role="STUDENT_INFO">
+              <PropertyRef Name="CLASS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SUBJECT_INFO_CLASS_INFO">
+          <End Role="CLASS_INFO" Type="Self.CLASS_INFO" Multiplicity="1" />
+          <End Role="SUBJECT_INFO" Type="Self.SUBJECT_INFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASS_INFO">
+              <PropertyRef Name="CLASS_ID" />
+            </Principal>
+            <Dependent Role="SUBJECT_INFO">
+              <PropertyRef Name="CLASS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_teachers_info_USER_LEVEL_INFO">
+          <End Role="USER_LEVEL_INFO" Type="Self.USER_LEVEL_INFO" Multiplicity="1" />
+          <End Role="teachers_info" Type="Self.teachers_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER_LEVEL_INFO">
+              <PropertyRef Name="LEVEL_ID" />
+            </Principal>
+            <Dependent Role="teachers_info">
+              <PropertyRef Name="user_level" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_INFO_USER_LEVEL_INFO">
+          <End Role="USER_LEVEL_INFO" Type="Self.USER_LEVEL_INFO" Multiplicity="1" />
+          <End Role="USER_INFO" Type="Self.USER_INFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER_LEVEL_INFO">
+              <PropertyRef Name="LEVEL_ID" />
+            </Principal>
+            <Dependent Role="USER_INFO">
+              <PropertyRef Name="USER_LEVEL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_PASS_CHANGE_HST_USER_INFO">
+          <End Role="USER_INFO" Type="Self.USER_INFO" Multiplicity="1" />
+          <End Role="USER_PASS_CHANGE_HST" Type="Self.USER_PASS_CHANGE_HST" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="USER_INFO">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="USER_PASS_CHANGE_HST">
+              <PropertyRef Name="CHANGE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="CLASS_INFO" EntityType="Self.CLASS_INFO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="course_details" EntityType="Self.course_details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="COURSE_TAKEN" EntityType="Self.COURSE_TAKEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RESULT_TABLE_MST" EntityType="Self.RESULT_TABLE_MST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RESULT-TBL" EntityType="Self.RESULT-TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="STUDENT_INFO" EntityType="Self.STUDENT_INFO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SUBJECT_INFO" EntityType="Self.SUBJECT_INFO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="teachers_info" EntityType="Self.teachers_info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USER_INFO" EntityType="Self.USER_INFO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USER_LEVEL_INFO" EntityType="Self.USER_LEVEL_INFO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USER_PASS_CHANGE_HST" EntityType="Self.USER_PASS_CHANGE_HST" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_course_details_CLASS_INFO" Association="Self.FK_course_details_CLASS_INFO">
+            <End Role="CLASS_INFO" EntitySet="CLASS_INFO" />
+            <End Role="course_details" EntitySet="course_details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_course_details_SUBJECT_INFO" Association="Self.FK_course_details_SUBJECT_INFO">
+            <End Role="SUBJECT_INFO" EntitySet="SUBJECT_INFO" />
+            <End Role="course_details" EntitySet="course_details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_course_details_teachers_info" Association="Self.FK_course_details_teachers_info">
+            <End Role="teachers_info" EntitySet="teachers_info" />
+            <End Role="course_details" EntitySet="course_details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COURSE_TAKEN_STUDENT_INFO" Association="Self.FK_COURSE_TAKEN_STUDENT_INFO">
+            <End Role="STUDENT_INFO" EntitySet="STUDENT_INFO" />
+            <End Role="COURSE_TAKEN" EntitySet="COURSE_TAKEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COURSE_TAKEN_SUBJECT_INFO" Association="Self.FK_COURSE_TAKEN_SUBJECT_INFO">
+            <End Role="SUBJECT_INFO" EntitySet="SUBJECT_INFO" />
+            <End Role="COURSE_TAKEN" EntitySet="COURSE_TAKEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RESULT-TBL_RESULT-TBL" Association="Self.FK_RESULT-TBL_RESULT-TBL">
+            <End Role="RESULT_TABLE_MST" EntitySet="RESULT_TABLE_MST" />
+            <End Role="RESULT-TBL" EntitySet="RESULT-TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RESULT-TBL_STUDENT_INFO" Association="Self.FK_RESULT-TBL_STUDENT_INFO">
+            <End Role="STUDENT_INFO" EntitySet="STUDENT_INFO" />
+            <End Role="RESULT-TBL" EntitySet="RESULT-TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RESULT-TBL_SUBJECT_INFO" Association="Self.FK_RESULT-TBL_SUBJECT_INFO">
+            <End Role="SUBJECT_INFO" EntitySet="SUBJECT_INFO" />
+            <End Role="RESULT-TBL" EntitySet="RESULT-TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STUDENT_INFO_CLASS_INFO" Association="Self.FK_STUDENT_INFO_CLASS_INFO">
+            <End Role="CLASS_INFO" EntitySet="CLASS_INFO" />
+            <End Role="STUDENT_INFO" EntitySet="STUDENT_INFO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SUBJECT_INFO_CLASS_INFO" Association="Self.FK_SUBJECT_INFO_CLASS_INFO">
+            <End Role="CLASS_INFO" EntitySet="CLASS_INFO" />
+            <End Role="SUBJECT_INFO" EntitySet="SUBJECT_INFO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_teachers_info_USER_LEVEL_INFO" Association="Self.FK_teachers_info_USER_LEVEL_INFO">
+            <End Role="USER_LEVEL_INFO" EntitySet="USER_LEVEL_INFO" />
+            <End Role="teachers_info" EntitySet="teachers_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_INFO_USER_LEVEL_INFO" Association="Self.FK_USER_INFO_USER_LEVEL_INFO">
+            <End Role="USER_LEVEL_INFO" EntitySet="USER_LEVEL_INFO" />
+            <End Role="USER_INFO" EntitySet="USER_INFO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_PASS_CHANGE_HST_USER_INFO" Association="Self.FK_USER_PASS_CHANGE_HST_USER_INFO">
+            <End Role="USER_INFO" EntitySet="USER_INFO" />
+            <End Role="USER_PASS_CHANGE_HST" EntitySet="USER_PASS_CHANGE_HST" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SRMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CLASS_INFO" EntityType="Model.CLASS_INFO" />
+          <EntitySet Name="course_details" EntityType="Model.course_details" />
+          <EntitySet Name="COURSE_TAKEN" EntityType="Model.COURSE_TAKEN" />
+          <EntitySet Name="RESULT_TABLE_MST" EntityType="Model.RESULT_TABLE_MST" />
+          <EntitySet Name="RESULT_TBL" EntityType="Model.RESULT_TBL" />
+          <EntitySet Name="STUDENT_INFO" EntityType="Model.STUDENT_INFO" />
+          <EntitySet Name="SUBJECT_INFO" EntityType="Model.SUBJECT_INFO" />
+          <EntitySet Name="teachers_info" EntityType="Model.teachers_info" />
+          <EntitySet Name="USER_INFO" EntityType="Model.USER_INFO" />
+          <EntitySet Name="USER_LEVEL_INFO" EntityType="Model.USER_LEVEL_INFO" />
+          <EntitySet Name="USER_PASS_CHANGE_HST" EntityType="Model.USER_PASS_CHANGE_HST" />
+          <AssociationSet Name="FK_course_details_CLASS_INFO" Association="Model.FK_course_details_CLASS_INFO">
+            <End Role="CLASS_INFO" EntitySet="CLASS_INFO" />
+            <End Role="course_details" EntitySet="course_details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STUDENT_INFO_CLASS_INFO" Association="Model.FK_STUDENT_INFO_CLASS_INFO">
+            <End Role="CLASS_INFO" EntitySet="CLASS_INFO" />
+            <End Role="STUDENT_INFO" EntitySet="STUDENT_INFO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SUBJECT_INFO_CLASS_INFO" Association="Model.FK_SUBJECT_INFO_CLASS_INFO">
+            <End Role="CLASS_INFO" EntitySet="CLASS_INFO" />
+            <End Role="SUBJECT_INFO" EntitySet="SUBJECT_INFO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_course_details_SUBJECT_INFO" Association="Model.FK_course_details_SUBJECT_INFO">
+            <End Role="SUBJECT_INFO" EntitySet="SUBJECT_INFO" />
+            <End Role="course_details" EntitySet="course_details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_course_details_teachers_info" Association="Model.FK_course_details_teachers_info">
+            <End Role="teachers_info" EntitySet="teachers_info" />
+            <End Role="course_details" EntitySet="course_details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COURSE_TAKEN_STUDENT_INFO" Association="Model.FK_COURSE_TAKEN_STUDENT_INFO">
+            <End Role="STUDENT_INFO" EntitySet="STUDENT_INFO" />
+            <End Role="COURSE_TAKEN" EntitySet="COURSE_TAKEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COURSE_TAKEN_SUBJECT_INFO" Association="Model.FK_COURSE_TAKEN_SUBJECT_INFO">
+            <End Role="SUBJECT_INFO" EntitySet="SUBJECT_INFO" />
+            <End Role="COURSE_TAKEN" EntitySet="COURSE_TAKEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RESULT_TBL_RESULT_TBL" Association="Model.FK_RESULT_TBL_RESULT_TBL">
+            <End Role="RESULT_TABLE_MST" EntitySet="RESULT_TABLE_MST" />
+            <End Role="RESULT_TBL" EntitySet="RESULT_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RESULT_TBL_STUDENT_INFO" Association="Model.FK_RESULT_TBL_STUDENT_INFO">
+            <End Role="STUDENT_INFO" EntitySet="STUDENT_INFO" />
+            <End Role="RESULT_TBL" EntitySet="RESULT_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RESULT_TBL_SUBJECT_INFO" Association="Model.FK_RESULT_TBL_SUBJECT_INFO">
+            <End Role="SUBJECT_INFO" EntitySet="SUBJECT_INFO" />
+            <End Role="RESULT_TBL" EntitySet="RESULT_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_teachers_info_USER_LEVEL_INFO" Association="Model.FK_teachers_info_USER_LEVEL_INFO">
+            <End Role="USER_LEVEL_INFO" EntitySet="USER_LEVEL_INFO" />
+            <End Role="teachers_info" EntitySet="teachers_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_INFO_USER_LEVEL_INFO" Association="Model.FK_USER_INFO_USER_LEVEL_INFO">
+            <End Role="USER_LEVEL_INFO" EntitySet="USER_LEVEL_INFO" />
+            <End Role="USER_INFO" EntitySet="USER_INFO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_PASS_CHANGE_HST_USER_INFO" Association="Model.FK_USER_PASS_CHANGE_HST_USER_INFO">
+            <End Role="USER_INFO" EntitySet="USER_INFO" />
+            <End Role="USER_PASS_CHANGE_HST" EntitySet="USER_PASS_CHANGE_HST" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CLASS_INFO">
+          <Key>
+            <PropertyRef Name="CLASS_ID" />
+          </Key>
+          <Property Name="CLASS_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CLASS_LEVEL" Type="Int32" Nullable="false" />
+          <Property Name="ACTION_BY" Type="Int64" Nullable="false" />
+          <Property Name="ACTION_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UPDATE_BY" Type="Int64" />
+          <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="REMARKS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="course_details" Relationship="Model.FK_course_details_CLASS_INFO" FromRole="CLASS_INFO" ToRole="course_details" />
+          <NavigationProperty Name="STUDENT_INFO" Relationship="Model.FK_STUDENT_INFO_CLASS_INFO" FromRole="CLASS_INFO" ToRole="STUDENT_INFO" />
+          <NavigationProperty Name="SUBJECT_INFO" Relationship="Model.FK_SUBJECT_INFO_CLASS_INFO" FromRole="CLASS_INFO" ToRole="SUBJECT_INFO" />
+        </EntityType>
+        <EntityType Name="course_details">
+          <Key>
+            <PropertyRef Name="course_id" />
+          </Key>
+          <Property Name="course_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="class_id" Type="Int64" Nullable="false" />
+          <Property Name="subject_id" Type="Int64" Nullable="false" />
+          <Property Name="teacher_id" Type="Int64" Nullable="false" />
+          <Property Name="action_by" Type="Int64" Nullable="false" />
+          <Property Name="action_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="update_by" Type="Int64" />
+          <Property Name="update_date" Type="DateTime" Precision="3" />
+          <Property Name="is_combine" Type="Int32" />
+          <NavigationProperty Name="CLASS_INFO" Relationship="Model.FK_course_details_CLASS_INFO" FromRole="course_details" ToRole="CLASS_INFO" />
+          <NavigationProperty Name="SUBJECT_INFO" Relationship="Model.FK_course_details_SUBJECT_INFO" FromRole="course_details" ToRole="SUBJECT_INFO" />
+          <NavigationProperty Name="teachers_info" Relationship="Model.FK_course_details_teachers_info" FromRole="course_details" ToRole="teachers_info" />
+        </EntityType>
+        <EntityType Name="COURSE_TAKEN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STD_ID" Type="Int64" Nullable="false" />
+          <Property Name="SUB_ID" Type="Int64" Nullable="false" />
+          <Property Name="COURSE_TYPE" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ACTION_BY" Type="Int64" Nullable="false" />
+          <Property Name="ACTION_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UPDATE_BY" Type="Int64" />
+          <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="STUDENT_INFO" Relationship="Model.FK_COURSE_TAKEN_STUDENT_INFO" FromRole="COURSE_TAKEN" ToRole="STUDENT_INFO" />
+          <NavigationProperty Name="SUBJECT_INFO" Relationship="Model.FK_COURSE_TAKEN_SUBJECT_INFO" FromRole="COURSE_TAKEN" ToRole="SUBJECT_INFO" />
+        </EntityType>
+        <EntityType Name="RESULT_TABLE_MST">
+          <Key>
+            <PropertyRef Name="RESULT_ID" />
+          </Key>
+          <Property Name="RESULT_ID" Type="Int64" Nullable="false" />
+          <Property Name="TEACHER_ID" Type="Int64" />
+          <Property Name="SUB_ID" Type="Int64" />
+          <Property Name="EXAM_TYPE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ACTION_BY" Type="Int64" Nullable="false" />
+          <Property Name="ACTION_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UPDATE_BY" Type="Int64" />
+          <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="STATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ACADEMIC_YEAR" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="RESULT_TBL" Relationship="Model.FK_RESULT_TBL_RESULT_TBL" FromRole="RESULT_TABLE_MST" ToRole="RESULT_TBL" />
+        </EntityType>
+        <EntityType Name="RESULT_TBL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CLASS_ID" Type="Int64" Nullable="false" />
+          <Property Name="SUB_ID" Type="Int64" Nullable="false" />
+          <Property Name="STD_ID" Type="Int64" Nullable="false" />
+          <Property Name="CREATIVE" Type="Int32" />
+          <Property Name="MCQ" Type="Int32" />
+          <Property Name="PRACTICAL" Type="Int32" />
+          <Property Name="EXAM_TRIMESTR" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ACTION_BY" Type="Int64" Nullable="false" />
+          <Property Name="ACTION_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UPDATE_BY" Type="Int64" />
+          <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="STATUS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="RESULT_TABLE_MST_ID" Type="Int64" />
+          <NavigationProperty Name="RESULT_TABLE_MST" Relationship="Model.FK_RESULT_TBL_RESULT_TBL" FromRole="RESULT_TBL" ToRole="RESULT_TABLE_MST" />
+          <NavigationProperty Name="STUDENT_INFO" Relationship="Model.FK_RESULT_TBL_STUDENT_INFO" FromRole="RESULT_TBL" ToRole="STUDENT_INFO" />
+          <NavigationProperty Name="SUBJECT_INFO" Relationship="Model.FK_RESULT_TBL_SUBJECT_INFO" FromRole="RESULT_TBL" ToRole="SUBJECT_INFO" />
+        </EntityType>
+        <EntityType Name="STUDENT_INFO">
+          <Key>
+            <PropertyRef Name="STD_ID" />
+          </Key>
+          <Property Name="STD_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STD_ROLL" Type="Int64" Nullable="false" />
+          <Property Name="STD_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="STD_ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="STD_FATHER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="STD_MOTHER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="STD_FATHER_CONTACT" Type="Int32" />
+          <Property Name="STD_MOTHER_CONTACT" Type="Int32" />
+          <Property Name="STD_CONTACT" Type="Int32" />
+          <Property Name="REMARKS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ACTION_BY" Type="Int64" Nullable="false" />
+          <Property Name="ACTION_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UPDATE_BY" Type="Int64" />
+          <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="IS_ACTIVE" Type="Int32" Nullable="false" />
+          <Property Name="CLASS_ID" Type="Int64" Nullable="false" />
+          <Property Name="GENDER" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="RELIGION" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="CLASS_INFO" Relationship="Model.FK_STUDENT_INFO_CLASS_INFO" FromRole="STUDENT_INFO" ToRole="CLASS_INFO" />
+          <NavigationProperty Name="COURSE_TAKEN" Relationship="Model.FK_COURSE_TAKEN_STUDENT_INFO" FromRole="STUDENT_INFO" ToRole="COURSE_TAKEN" />
+          <NavigationProperty Name="RESULT_TBL" Relationship="Model.FK_RESULT_TBL_STUDENT_INFO" FromRole="STUDENT_INFO" ToRole="RESULT_TBL" />
+        </EntityType>
+        <EntityType Name="SUBJECT_INFO">
+          <Key>
+            <PropertyRef Name="SUB_ID" />
+          </Key>
+          <Property Name="SUB_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SUB_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CLASS_ID" Type="Int64" Nullable="false" />
+          <Property Name="TOTAL_MARKS" Type="Int32" Nullable="false" />
+          <Property Name="CREATIVE_MARKS" Type="Int32" />
+          <Property Name="MCQ_MARKS" Type="Int32" />
+          <Property Name="PRACTICAL_MARKS" Type="Int32" />
+          <Property Name="ACTION_BY" Type="Int64" Nullable="false" />
+          <Property Name="ACTION_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UPDATE_BY" Type="Int64" />
+          <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="REMARKS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IS_ACTIVE" Type="Int32" Nullable="false" />
+          <Property Name="SUB_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COMBINE_SUB" Type="Int64" />
+          <Property Name="GROUP_CATEGORY" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="CLASS_INFO" Relationship="Model.FK_SUBJECT_INFO_CLASS_INFO" FromRole="SUBJECT_INFO" ToRole="CLASS_INFO" />
+          <NavigationProperty Name="course_details" Relationship="Model.FK_course_details_SUBJECT_INFO" FromRole="SUBJECT_INFO" ToRole="course_details" />
+          <NavigationProperty Name="COURSE_TAKEN" Relationship="Model.FK_COURSE_TAKEN_SUBJECT_INFO" FromRole="SUBJECT_INFO" ToRole="COURSE_TAKEN" />
+          <NavigationProperty Name="RESULT_TBL" Relationship="Model.FK_RESULT_TBL_SUBJECT_INFO" FromRole="SUBJECT_INFO" ToRole="RESULT_TBL" />
+        </EntityType>
+        <EntityType Name="teachers_info">
+          <Key>
+            <PropertyRef Name="teacher_id" />
+          </Key>
+          <Property Name="teacher_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="teacher_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="contact_no" Type="Int32" Nullable="false" />
+          <Property Name="gender" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="religion" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="designation" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_level" Type="Int64" Nullable="false" />
+          <Property Name="is_active" Type="Int32" />
+          <Property Name="action_by" Type="Int64" Nullable="false" />
+          <Property Name="action_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="update_by" Type="Int64" />
+          <Property Name="update_date" Type="DateTime" Precision="3" />
+          <Property Name="remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="course_details" Relationship="Model.FK_course_details_teachers_info" FromRole="teachers_info" ToRole="course_details" />
+          <NavigationProperty Name="USER_LEVEL_INFO" Relationship="Model.FK_teachers_info_USER_LEVEL_INFO" FromRole="teachers_info" ToRole="USER_LEVEL_INFO" />
+        </EntityType>
+        <EntityType Name="USER_INFO">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FULL_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USER_LEVEL_ID" Type="Int64" Nullable="false" />
+          <Property Name="USERNAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PASSWORD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MOBILE" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USER_PHOTO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LOGIN_ATTEMPT" Type="Int16" Nullable="false" />
+          <Property Name="DATE_PASSWORD_CHANGE" Type="DateTime" Precision="3" />
+          <Property Name="ACTION_DT" Type="DateTime" Precision="3" />
+          <Property Name="ACTION_BY" Type="Int64" />
+          <Property Name="UPDATE_DT" Type="DateTime" Precision="3" />
+          <Property Name="UPDATE_BY" Type="Int64" />
+          <Property Name="IS_DELETED" Type="Int32" Nullable="false" />
+          <Property Name="EMPLOYEE_ID" Type="Int64" />
+          <NavigationProperty Name="USER_LEVEL_INFO" Relationship="Model.FK_USER_INFO_USER_LEVEL_INFO" FromRole="USER_INFO" ToRole="USER_LEVEL_INFO" />
+          <NavigationProperty Name="USER_PASS_CHANGE_HST" Relationship="Model.FK_USER_PASS_CHANGE_HST_USER_INFO" FromRole="USER_INFO" ToRole="USER_PASS_CHANGE_HST" />
+        </EntityType>
+        <EntityType Name="USER_LEVEL_INFO">
+          <Key>
+            <PropertyRef Name="LEVEL_ID" />
+          </Key>
+          <Property Name="LEVEL_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LEVEL_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ACTION_DT" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UPDATE_DT" Type="DateTime" Precision="3" />
+          <Property Name="REMARKS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="teachers_info" Relationship="Model.FK_teachers_info_USER_LEVEL_INFO" FromRole="USER_LEVEL_INFO" ToRole="teachers_info" />
+          <NavigationProperty Name="USER_INFO" Relationship="Model.FK_USER_INFO_USER_LEVEL_INFO" FromRole="USER_LEVEL_INFO" ToRole="USER_INFO" />
+        </EntityType>
+        <EntityType Name="USER_PASS_CHANGE_HST">
+          <Key>
+            <PropertyRef Name="CHANGE_ID" />
+          </Key>
+          <Property Name="CHANGE_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USER_ID" Type="Int64" Nullable="false" />
+          <Property Name="NEW_PASSWORD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OLD_PASSWORD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CHANGE_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="USER_INFO" Relationship="Model.FK_USER_PASS_CHANGE_HST_USER_INFO" FromRole="USER_PASS_CHANGE_HST" ToRole="USER_INFO" />
+        </EntityType>
+        <Association Name="FK_course_details_CLASS_INFO">
+          <End Type="Model.CLASS_INFO" Role="CLASS_INFO" Multiplicity="1" />
+          <End Type="Model.course_details" Role="course_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASS_INFO">
+              <PropertyRef Name="CLASS_ID" />
+            </Principal>
+            <Dependent Role="course_details">
+              <PropertyRef Name="class_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STUDENT_INFO_CLASS_INFO">
+          <End Type="Model.CLASS_INFO" Role="CLASS_INFO" Multiplicity="1" />
+          <End Type="Model.STUDENT_INFO" Role="STUDENT_INFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASS_INFO">
+              <PropertyRef Name="CLASS_ID" />
+            </Principal>
+            <Dependent Role="STUDENT_INFO">
+              <PropertyRef Name="CLASS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SUBJECT_INFO_CLASS_INFO">
+          <End Type="Model.CLASS_INFO" Role="CLASS_INFO" Multiplicity="1" />
+          <End Type="Model.SUBJECT_INFO" Role="SUBJECT_INFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASS_INFO">
+              <PropertyRef Name="CLASS_ID" />
+            </Principal>
+            <Dependent Role="SUBJECT_INFO">
+              <PropertyRef Name="CLASS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_course_details_SUBJECT_INFO">
+          <End Type="Model.SUBJECT_INFO" Role="SUBJECT_INFO" Multiplicity="1" />
+          <End Type="Model.course_details" Role="course_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUBJECT_INFO">
+              <PropertyRef Name="SUB_ID" />
+            </Principal>
+            <Dependent Role="course_details">
+              <PropertyRef Name="subject_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_course_details_teachers_info">
+          <End Type="Model.teachers_info" Role="teachers_info" Multiplicity="1" />
+          <End Type="Model.course_details" Role="course_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="teachers_info">
+              <PropertyRef Name="teacher_id" />
+            </Principal>
+            <Dependent Role="course_details">
+              <PropertyRef Name="teacher_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COURSE_TAKEN_STUDENT_INFO">
+          <End Type="Model.STUDENT_INFO" Role="STUDENT_INFO" Multiplicity="1" />
+          <End Type="Model.COURSE_TAKEN" Role="COURSE_TAKEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STUDENT_INFO">
+              <PropertyRef Name="STD_ID" />
+            </Principal>
+            <Dependent Role="COURSE_TAKEN">
+              <PropertyRef Name="STD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COURSE_TAKEN_SUBJECT_INFO">
+          <End Type="Model.SUBJECT_INFO" Role="SUBJECT_INFO" Multiplicity="1" />
+          <End Type="Model.COURSE_TAKEN" Role="COURSE_TAKEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUBJECT_INFO">
+              <PropertyRef Name="SUB_ID" />
+            </Principal>
+            <Dependent Role="COURSE_TAKEN">
+              <PropertyRef Name="SUB_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RESULT_TBL_RESULT_TBL">
+          <End Type="Model.RESULT_TABLE_MST" Role="RESULT_TABLE_MST" Multiplicity="0..1" />
+          <End Type="Model.RESULT_TBL" Role="RESULT_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RESULT_TABLE_MST">
+              <PropertyRef Name="RESULT_ID" />
+            </Principal>
+            <Dependent Role="RESULT_TBL">
+              <PropertyRef Name="RESULT_TABLE_MST_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RESULT_TBL_STUDENT_INFO">
+          <End Type="Model.STUDENT_INFO" Role="STUDENT_INFO" Multiplicity="1" />
+          <End Type="Model.RESULT_TBL" Role="RESULT_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STUDENT_INFO">
+              <PropertyRef Name="STD_ID" />
+            </Principal>
+            <Dependent Role="RESULT_TBL">
+              <PropertyRef Name="STD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RESULT_TBL_SUBJECT_INFO">
+          <End Type="Model.SUBJECT_INFO" Role="SUBJECT_INFO" Multiplicity="1" />
+          <End Type="Model.RESULT_TBL" Role="RESULT_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUBJECT_INFO">
+              <PropertyRef Name="SUB_ID" />
+            </Principal>
+            <Dependent Role="RESULT_TBL">
+              <PropertyRef Name="SUB_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_teachers_info_USER_LEVEL_INFO">
+          <End Type="Model.USER_LEVEL_INFO" Role="USER_LEVEL_INFO" Multiplicity="1" />
+          <End Type="Model.teachers_info" Role="teachers_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER_LEVEL_INFO">
+              <PropertyRef Name="LEVEL_ID" />
+            </Principal>
+            <Dependent Role="teachers_info">
+              <PropertyRef Name="user_level" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_INFO_USER_LEVEL_INFO">
+          <End Type="Model.USER_LEVEL_INFO" Role="USER_LEVEL_INFO" Multiplicity="1" />
+          <End Type="Model.USER_INFO" Role="USER_INFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER_LEVEL_INFO">
+              <PropertyRef Name="LEVEL_ID" />
+            </Principal>
+            <Dependent Role="USER_INFO">
+              <PropertyRef Name="USER_LEVEL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_PASS_CHANGE_HST_USER_INFO">
+          <End Type="Model.USER_INFO" Role="USER_INFO" Multiplicity="1" />
+          <End Type="Model.USER_PASS_CHANGE_HST" Role="USER_PASS_CHANGE_HST" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="USER_INFO">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="USER_PASS_CHANGE_HST">
+              <PropertyRef Name="CHANGE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="SRMSEntities">
+          <EntitySetMapping Name="CLASS_INFO">
+            <EntityTypeMapping TypeName="Model.CLASS_INFO">
+              <MappingFragment StoreEntitySet="CLASS_INFO">
+                <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+                <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+                <ScalarProperty Name="ACTION_DATE" ColumnName="ACTION_DATE" />
+                <ScalarProperty Name="ACTION_BY" ColumnName="ACTION_BY" />
+                <ScalarProperty Name="CLASS_LEVEL" ColumnName="CLASS_LEVEL" />
+                <ScalarProperty Name="CLASS_ID" ColumnName="CLASS_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="course_details">
+            <EntityTypeMapping TypeName="Model.course_details">
+              <MappingFragment StoreEntitySet="course_details">
+                <ScalarProperty Name="is_combine" ColumnName="is_combine" />
+                <ScalarProperty Name="update_date" ColumnName="update_date" />
+                <ScalarProperty Name="update_by" ColumnName="update_by" />
+                <ScalarProperty Name="action_date" ColumnName="action_date" />
+                <ScalarProperty Name="action_by" ColumnName="action_by" />
+                <ScalarProperty Name="teacher_id" ColumnName="teacher_id" />
+                <ScalarProperty Name="subject_id" ColumnName="subject_id" />
+                <ScalarProperty Name="class_id" ColumnName="class_id" />
+                <ScalarProperty Name="course_id" ColumnName="course_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COURSE_TAKEN">
+            <EntityTypeMapping TypeName="Model.COURSE_TAKEN">
+              <MappingFragment StoreEntitySet="COURSE_TAKEN">
+                <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+                <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+                <ScalarProperty Name="ACTION_DATE" ColumnName="ACTION_DATE" />
+                <ScalarProperty Name="ACTION_BY" ColumnName="ACTION_BY" />
+                <ScalarProperty Name="COURSE_TYPE" ColumnName="COURSE_TYPE" />
+                <ScalarProperty Name="SUB_ID" ColumnName="SUB_ID" />
+                <ScalarProperty Name="STD_ID" ColumnName="STD_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RESULT_TABLE_MST">
+            <EntityTypeMapping TypeName="Model.RESULT_TABLE_MST">
+              <MappingFragment StoreEntitySet="RESULT_TABLE_MST">
+                <ScalarProperty Name="ACADEMIC_YEAR" ColumnName="ACADEMIC_YEAR" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+                <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+                <ScalarProperty Name="ACTION_DATE" ColumnName="ACTION_DATE" />
+                <ScalarProperty Name="ACTION_BY" ColumnName="ACTION_BY" />
+                <ScalarProperty Name="EXAM_TYPE" ColumnName="EXAM_TYPE" />
+                <ScalarProperty Name="SUB_ID" ColumnName="SUB_ID" />
+                <ScalarProperty Name="TEACHER_ID" ColumnName="TEACHER_ID" />
+                <ScalarProperty Name="RESULT_ID" ColumnName="RESULT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RESULT_TBL">
+            <EntityTypeMapping TypeName="Model.RESULT_TBL">
+              <MappingFragment StoreEntitySet="RESULT-TBL">
+                <ScalarProperty Name="RESULT_TABLE_MST_ID" ColumnName="RESULT_TABLE_MST_ID" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+                <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+                <ScalarProperty Name="ACTION_DATE" ColumnName="ACTION_DATE" />
+                <ScalarProperty Name="ACTION_BY" ColumnName="ACTION_BY" />
+                <ScalarProperty Name="EXAM_TRIMESTR" ColumnName="EXAM_TRIMESTR" />
+                <ScalarProperty Name="PRACTICAL" ColumnName="PRACTICAL" />
+                <ScalarProperty Name="MCQ" ColumnName="MCQ" />
+                <ScalarProperty Name="CREATIVE" ColumnName="CREATIVE" />
+                <ScalarProperty Name="STD_ID" ColumnName="STD_ID" />
+                <ScalarProperty Name="SUB_ID" ColumnName="SUB_ID" />
+                <ScalarProperty Name="CLASS_ID" ColumnName="CLASS_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STUDENT_INFO">
+            <EntityTypeMapping TypeName="Model.STUDENT_INFO">
+              <MappingFragment StoreEntitySet="STUDENT_INFO">
+                <ScalarProperty Name="RELIGION" ColumnName="RELIGION" />
+                <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+                <ScalarProperty Name="CLASS_ID" ColumnName="CLASS_ID" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+                <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+                <ScalarProperty Name="ACTION_DATE" ColumnName="ACTION_DATE" />
+                <ScalarProperty Name="ACTION_BY" ColumnName="ACTION_BY" />
+                <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="STD_CONTACT" ColumnName="STD_CONTACT" />
+                <ScalarProperty Name="STD_MOTHER_CONTACT" ColumnName="STD_MOTHER_CONTACT" />
+                <ScalarProperty Name="STD_FATHER_CONTACT" ColumnName="STD_FATHER_CONTACT" />
+                <ScalarProperty Name="STD_MOTHER_NAME" ColumnName="STD_MOTHER_NAME" />
+                <ScalarProperty Name="STD_FATHER_NAME" ColumnName="STD_FATHER_NAME" />
+                <ScalarProperty Name="STD_ADDRESS" ColumnName="STD_ADDRESS" />
+                <ScalarProperty Name="STD_NAME" ColumnName="STD_NAME" />
+                <ScalarProperty Name="STD_ROLL" ColumnName="STD_ROLL" />
+                <ScalarProperty Name="STD_ID" ColumnName="STD_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUBJECT_INFO">
+            <EntityTypeMapping TypeName="Model.SUBJECT_INFO">
+              <MappingFragment StoreEntitySet="SUBJECT_INFO">
+                <ScalarProperty Name="GROUP_CATEGORY" ColumnName="GROUP_CATEGORY" />
+                <ScalarProperty Name="COMBINE_SUB" ColumnName="COMBINE_SUB" />
+                <ScalarProperty Name="SUB_CODE" ColumnName="SUB_CODE" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+                <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+                <ScalarProperty Name="ACTION_DATE" ColumnName="ACTION_DATE" />
+                <ScalarProperty Name="ACTION_BY" ColumnName="ACTION_BY" />
+                <ScalarProperty Name="PRACTICAL_MARKS" ColumnName="PRACTICAL_MARKS" />
+                <ScalarProperty Name="MCQ_MARKS" ColumnName="MCQ_MARKS" />
+                <ScalarProperty Name="CREATIVE_MARKS" ColumnName="CREATIVE_MARKS" />
+                <ScalarProperty Name="TOTAL_MARKS" ColumnName="TOTAL_MARKS" />
+                <ScalarProperty Name="CLASS_ID" ColumnName="CLASS_ID" />
+                <ScalarProperty Name="SUB_NAME" ColumnName="SUB_NAME" />
+                <ScalarProperty Name="SUB_ID" ColumnName="SUB_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="teachers_info">
+            <EntityTypeMapping TypeName="Model.teachers_info">
+              <MappingFragment StoreEntitySet="teachers_info">
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+                <ScalarProperty Name="update_date" ColumnName="update_date" />
+                <ScalarProperty Name="update_by" ColumnName="update_by" />
+                <ScalarProperty Name="action_date" ColumnName="action_date" />
+                <ScalarProperty Name="action_by" ColumnName="action_by" />
+                <ScalarProperty Name="is_active" ColumnName="is_active" />
+                <ScalarProperty Name="user_level" ColumnName="user_level" />
+                <ScalarProperty Name="designation" ColumnName="designation" />
+                <ScalarProperty Name="religion" ColumnName="religion" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="contact_no" ColumnName="contact_no" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="teacher_name" ColumnName="teacher_name" />
+                <ScalarProperty Name="teacher_id" ColumnName="teacher_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USER_INFO">
+            <EntityTypeMapping TypeName="Model.USER_INFO">
+              <MappingFragment StoreEntitySet="USER_INFO">
+                <ScalarProperty Name="EMPLOYEE_ID" ColumnName="EMPLOYEE_ID" />
+                <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+                <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+                <ScalarProperty Name="UPDATE_DT" ColumnName="UPDATE_DT" />
+                <ScalarProperty Name="ACTION_BY" ColumnName="ACTION_BY" />
+                <ScalarProperty Name="ACTION_DT" ColumnName="ACTION_DT" />
+                <ScalarProperty Name="DATE_PASSWORD_CHANGE" ColumnName="DATE_PASSWORD_CHANGE" />
+                <ScalarProperty Name="LOGIN_ATTEMPT" ColumnName="LOGIN_ATTEMPT" />
+                <ScalarProperty Name="USER_PHOTO" ColumnName="USER_PHOTO" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="USER_LEVEL_ID" ColumnName="USER_LEVEL_ID" />
+                <ScalarProperty Name="FULL_NAME" ColumnName="FULL_NAME" />
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USER_LEVEL_INFO">
+            <EntityTypeMapping TypeName="Model.USER_LEVEL_INFO">
+              <MappingFragment StoreEntitySet="USER_LEVEL_INFO">
+                <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="UPDATE_DT" ColumnName="UPDATE_DT" />
+                <ScalarProperty Name="ACTION_DT" ColumnName="ACTION_DT" />
+                <ScalarProperty Name="LEVEL_NAME" ColumnName="LEVEL_NAME" />
+                <ScalarProperty Name="LEVEL_ID" ColumnName="LEVEL_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USER_PASS_CHANGE_HST">
+            <EntityTypeMapping TypeName="Model.USER_PASS_CHANGE_HST">
+              <MappingFragment StoreEntitySet="USER_PASS_CHANGE_HST">
+                <ScalarProperty Name="CHANGE_DATE" ColumnName="CHANGE_DATE" />
+                <ScalarProperty Name="OLD_PASSWORD" ColumnName="OLD_PASSWORD" />
+                <ScalarProperty Name="NEW_PASSWORD" ColumnName="NEW_PASSWORD" />
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="CHANGE_ID" ColumnName="CHANGE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

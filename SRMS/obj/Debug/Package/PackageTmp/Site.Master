@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SRMS.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> </title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/school.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-collapse text-right">
+                    <asp:Button CssClass="btn btn-primary btn-sm" ID="btnlogout" dataplacement="right" runat="server" Text="Logout" OnClick="btnlogout_Click" />
+                </div>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/UI/Home/" style="color: crimson"><b>Samadia Darul Ulum Secondary School</b></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/UI/Home/">Home</a></li>
+                        <li><a runat="server" href="~/UI/Admin/ViewAllAdminPanel">Admin</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Official Details  <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a runat="server" href="~/UI/SubjectInfo/ViewSubjects">Subjects</a></li>
+                                 <li class="divider"></li>
+                                <li><a runat="server" href="~/UI/StudentInfo/ViewStudentInfo">Students</a></li>
+                                 <li class="divider"></li>
+                                <li><a runat="server" href="~/UI/TeachersInfo/ViewTeachersDetails">Teachers</a></li>
+                                 <li class="divider"></li>
+                                <li><a runat="server" href="~/UI/Courses/ViewCourses">Course</a></li>                               
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Academic Result <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a runat="server" href="~/UI/MarksDistribution/ViewClassDetails">Marks Submit</a></li>
+                                 <li class="divider"></li>
+                                <li><a runat="server" href="~/UI/Results/ViewStudentMarks.aspx">Result Publish</a></li>
+                                 <li class="divider"></li>
+                                <li><a runat="server" href="~/UI/Results/StudentDB.aspx">View Result</a></li>           
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer class="text-center">
+                <p><a href="https://www.it-theory.com" style="color: red">&copy;2018 by IT-Theory</a> </p>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
