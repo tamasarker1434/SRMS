@@ -268,10 +268,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/24/2018 13:38:24</publishTime>
     </File>
     <File Include="bin/SRMS.dll">
-      <publishTime>12/17/2019 14:17:19</publishTime>
+      <publishTime>12/20/2019 14:04:57</publishTime>
     </File>
     <File Include="bin/SRMS.pdb">
-      <publishTime>12/17/2019 14:17:19</publishTime>
+      <publishTime>12/20/2019 14:04:57</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
       <publishTime>02/11/2014 15:26:04</publishTime>
@@ -286,7 +286,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/06/2019 18:05:21</publishTime>
     </File>
     <File Include="Content/bootstrap-def.min.css">
-      <publishTime>06/12/2019 18:05:21</publishTime>
+      <publishTime>12/06/2019 18:05:21</publishTime>
     </File>
     <File Include="Content/bootstrap-grid.css">
       <publishTime>12/06/2019 18:05:21</publishTime>
@@ -313,13 +313,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/06/2019 18:05:21</publishTime>
     </File>
     <File Include="Content/bootstrap.css">
-      <publishTime>06/12/2019 20:40:28</publishTime>
+      <publishTime>12/06/2019 20:40:28</publishTime>
     </File>
     <File Include="Content/bootstrap.css.map">
       <publishTime>12/06/2019 18:05:21</publishTime>
     </File>
     <File Include="Content/bootstrap.min.css">
-      <publishTime>06/12/2019 20:54:54</publishTime>
+      <publishTime>12/06/2019 20:54:54</publishTime>
     </File>
     <File Include="Content/bootstrap.min.css.map">
       <publishTime>12/06/2019 18:05:21</publishTime>
@@ -349,7 +349,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/06/2019 17:58:21</publishTime>
     </File>
     <File Include="Models/Model.edmx.diagram">
-      <publishTime>09/12/2019 12:22:01</publishTime>
+      <publishTime>12/09/2019 12:22:01</publishTime>
     </File>
     <File Include="Resources/access_denied.png">
       <publishTime>12/06/2019 17:03:01</publishTime>
@@ -376,7 +376,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/06/2019 17:03:01</publishTime>
     </File>
     <File Include="Resources/fab-icon.ico">
-      <publishTime>06/12/2019 23:50:45</publishTime>
+      <publishTime>12/06/2019 23:50:45</publishTime>
     </File>
     <File Include="Resources/favicon.ico">
       <publishTime>12/06/2019 17:03:01</publishTime>
@@ -715,10 +715,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/14/2019 21:08:08</publishTime>
     </File>
     <File Include="Resources/publish.png">
-      <publishTime>08/12/2019 13:06:50</publishTime>
+      <publishTime>12/08/2019 13:06:50</publishTime>
     </File>
     <File Include="Resources/school.ico">
-      <publishTime>07/12/2019 00:03:08</publishTime>
+      <publishTime>12/07/2019 00:03:08</publishTime>
     </File>
     <File Include="Resources/vendor/animate/animate.css">
       <publishTime>12/06/2019 17:03:02</publishTime>
@@ -1177,13 +1177,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/06/2019 16:52:19</publishTime>
     </File>
     <File Include="Site.Master">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>12/14/2019 22:01:00</publishTime>
     </File>
     <File Include="Site.Mobile.Master">
       <publishTime>12/06/2019 16:52:21</publishTime>
     </File>
     <File Include="UI/Admin/SetUserInfo.aspx">
-      <publishTime>09/12/2019 01:15:50</publishTime>
+      <publishTime>12/09/2019 01:15:50</publishTime>
     </File>
     <File Include="UI/Admin/SetUserLevel.aspx">
       <publishTime>12/06/2019 17:03:15</publishTime>
@@ -1243,7 +1243,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/14/2019 20:43:18</publishTime>
     </File>
     <File Include="UI/Results/ViewStudentMarksTeacherwise.aspx">
-      <publishTime>07/12/2019 00:11:42</publishTime>
+      <publishTime>12/07/2019 00:11:42</publishTime>
     </File>
     <File Include="UI/StudentInfo/SetStudentInfo.aspx">
       <publishTime>12/06/2019 17:03:15</publishTime>
